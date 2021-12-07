@@ -19,11 +19,11 @@ export class DataService implements HttpInterceptor {
 
   }
 
-  courses ='/api-2.0/courses/';
+  courses ='https://www.udemy.com/api-2.0/courses/';
 
-  //https://www.udemy.com
+  
 
-  //courses = 'https://jsonplaceholder.typicode.com/posts';
+  //testAPI = 'https://jsonplaceholder.typicode.com/posts';
   
 
   headers = new HttpHeaders (
