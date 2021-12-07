@@ -4,7 +4,7 @@
   "type": "commonjs",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config  proxy.conf.json",
+    "start": "ng serve -o --proxy-config  proxy.conf.json --host 0.0.0.0 --disable-host-check",
     "dev": "concurrently --kill-others \"nodemon ./src/server.js\" \"npm start\" ",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
