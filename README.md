@@ -1,7 +1,5 @@
 # UwezoAcademy
 
-## fetch data from Udemy Affiliate API
+## REST API
 
-## npm run dev
-
-To run both server and the app concurrently
+fetch data from Udemy Affiliate API
