@@ -5,7 +5,7 @@ import  'zone.js/dist/zone.api.extensions';
 
 
 export const environment = {
-  production: true
+  production: false
 };
 
 /*
