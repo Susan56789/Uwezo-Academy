@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-courses',
@@ -13,8 +14,20 @@ courses: any;
 
   constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
- this.courses = this.dataService.getCourses();
-  }
+  async ngOnInit() {
 
-}
+ this.courses = this.dataService.getCourses().then(
+  (data) => {
+    this.courses = data;
+    console.log(data)
+    //return data;
+  },
+  (err: any)=>{
+    console.log(err);
+  }
+)
+  }
+ 
+
+
+ }
