@@ -22,7 +22,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -68,8 +67,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "proxyConfig":"proxy.conf.json"
-            
+            "proxyConfig": "./src/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -102,6 +100,34 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "nightwatch-run": {
+          "builder": "@nightwatch/schematics:nightwatch",
+          "options": {
+            "devServerTarget": "Uwezo-Academy:serve",
+            "tsConfig": "../nightwatch/tsconfig.e2e.json",
+            "config": "./nightwatch.conf.js",
+            "env": "chrome"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Uwezo-Academy:serve:production"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@nightwatch/schematics:nightwatch",
+          "options": {
+            "devServerTarget": "Uwezo-Academy:serve",
+            "tsConfig": "../nightwatch/tsconfig.e2e.json",
+            "config": "./nightwatch.conf.js",
+            "env": "chrome"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Uwezo-Academy:serve:production"
+            }
           }
         }
       }

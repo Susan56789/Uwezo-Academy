@@ -5,7 +5,7 @@
       "changeOrigin": true,
       "logLevel":"debug",
       "pathRewrite":{
-        "^/api-2.0/": "https://www.udemy.com/api-2.0"
+        "^/api-2.0/": ""
       }
     }
   }
