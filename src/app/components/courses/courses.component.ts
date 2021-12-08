@@ -16,7 +16,7 @@ courses: any;
 
   async ngOnInit() {
 
- this.courses = this.dataService.getCourses().pipe(
+ this.courses = (await this.dataService.getCourses()).pipe(
   map(
     res =>{
      console.log(res);
