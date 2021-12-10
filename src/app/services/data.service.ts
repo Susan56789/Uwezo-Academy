@@ -32,6 +32,10 @@ export class DataService implements HttpInterceptor {
   headers = new HttpHeaders (
   
     {
+            credentials: 'include', // include, *same-origin, omit
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       "Access-Control-Allow-Origin":"*",
       "Content-Type": "application/json, text/plain, */*",
       "X-Requested-With":"XMLHttpRequest",
