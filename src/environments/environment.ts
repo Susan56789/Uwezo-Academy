@@ -5,7 +5,9 @@ import  'zone.js/dist/zone.api.extensions';
 
 
 export const environment = {
-  production: false
+  production: true,
+  SKIP_PREFLIGHT_CHECK:true,
+  apiKey: 'prodKey'
 };
 
 /*
