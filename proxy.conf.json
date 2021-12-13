@@ -1,0 +1,7 @@
+{
+    "*": {
+        "target": "https://www.udemy.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

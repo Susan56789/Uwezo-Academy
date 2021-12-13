@@ -6,7 +6,7 @@
     "e2e": "ng e2e",
     "e2e:test": "./node_modules/.bin/nightwatch --env 'chrome' --config './nightwatch.conf.js'",
     "ng": "ng",
-    "start": "ng serve -o --proxy-config  ./src/proxy.conf.json",
+    "start": "ng serve",
     "dev": "concurrently --kill-others \"nodemon ./src/server.js\" \"npm start\" ",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
