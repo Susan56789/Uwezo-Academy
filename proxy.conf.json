@@ -2,6 +2,7 @@
     "*": {
         "target": "https://www.udemy.com",
         "secure": false,
+        "changeOrigin": true,
         "logLevel": "debug"
     }
 }
