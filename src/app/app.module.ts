@@ -22,7 +22,7 @@ import { CoursesComponent } from './components/courses/courses.component';
     CoursesComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule
   ],
