@@ -1,8 +1,19 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const pino = require('express-pino-logger')();
+//const express = require('express');
+import express from 'express';
 
-const cors =require("cors");
+//const bodyParser = require('body-parser');
+import bodyParser from 'body-parser';
+
+//const pino = require('express-pino-logger')();
+import pino from 'express-pino-logger';
+
+//const courses =require('./courses');
+//import courses from './courses'
+//import *  as courses from './courses';
+
+
+//const cors =require("cors");
+import cors from 'cors';
 
 const app = express();
 
@@ -13,7 +24,8 @@ app.use(express.urlencoded());
 
 
 var corsOptions={
-    origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "*"]
+    origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "**"],
+    redirect:"follow"
 
 }
 
@@ -31,4 +43,10 @@ res.send("Hello Node,js !");
 });
 
 //Get all articles
-require("./courses")(app);
+//require("./courses")(app);
+
+app.get("/courses", async(req,res)=>{
+    console.log(courses);
+      let result = await courses (req.headers);
+     res.send(result);
+    });

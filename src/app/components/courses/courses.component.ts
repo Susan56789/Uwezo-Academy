@@ -19,7 +19,9 @@ courses: any;
  this.courses = (await this.dataService.getCourses()).pipe(
   map(
     res =>{
-     console.log(res);
+
+      return res;
+    // console.log(res);
 
     }
   )

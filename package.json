@@ -1,7 +1,7 @@
 {
   "name": "uwezo-academy",
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "e2e": "ng e2e",
     "e2e:test": "./node_modules/.bin/nightwatch --env 'chrome' --config './nightwatch.conf.js'",
@@ -15,7 +15,9 @@
     "dev:ssr": "ng run Uwezo-Academy:serve-ssr",
     "serve:ssr": "node dist/Uwezo-Academy/server/main.js",
     "build:ssr": "ng build && ng run Uwezo-Academy:server",
-    "prerender": "ng run Uwezo-Academy:prerender"
+    "prerender": "ng run Uwezo-Academy:prerender",
+    "build:functions": "npm run functions build",
+    "build:all": "npm run build:ssr && build:functions"
   },
   "private": true,
   "dependencies": {
@@ -45,12 +47,14 @@
     "http-proxy": "^1.18.1",
     "ngx-bootstrap": "^7.1.0",
     "node-env-run": "^4.0.2",
+    "node-fetch": "^3.1.0",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "pino-colada": "^2.2.2",
     "request": "^2.88.2",
     "rxjs": "~7.4.0",
     "sqlite3": "^5.0.2",
+    "ts-node": "^10.4.0",
     "tslib": "^2.3.0",
     "typeorm": "^0.2.32",
     "zone.js": "~0.11.4"

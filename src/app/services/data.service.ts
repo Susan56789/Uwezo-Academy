@@ -35,21 +35,23 @@ export class DataService implements HttpInterceptor {
     headers.set('Access-Control-Allow-Origin', '*')
     headers.set("Accept", "application/json, text/plain, */*")
     headers.set("Authorization", "Basic WnNPY0txUnlhVU9WaWx4VFdCSE0yZGo2Uk5BUGdRM05BNzRMbUJlYTpYZlVZUXprazc3T2FmWFJ5bHVONW5RQ1hRNThGeHBtd1NYTE9HaXJQa0hDQ0lBT0N5aVRGYVZYV3htZ1V3YTBtQURab3drc2I4YzEzYVFrblNLWGlKS1ZWMUFqb2t3M3ZQNm13NTU5dXNIYXAxeU9oZFo2VHJQZERnUTlKanF1aA==")
-    headers.set("Content-Type","application/json;charset=utf-8"),
+    headers.set("Content-Type","application/json, charset=utf-8")
     headers.set("Permissions-Policy", "interest-cohort =()")
+    
 
-    const result = this.http.get<any>('https:localhost:8000/api-2.0/courses/', {headers}).pipe(
+    const result = this.http.get<any>("http://localhost:8000/courses").pipe(
       map((res) => {
-       // return res;
-        console.log(res)
+        return res;
+        //console.log(res)
       }),
       tap((response) => {
-       // return response;
-       console.log(response)
+        return response;
+      // console.log(response)
       }),
       catchError(async (err) => this.handleHttpError),
     )
 
-    return await result
+    return await result;
+
   }
 }
