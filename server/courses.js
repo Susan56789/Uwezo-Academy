@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-    url = 'https://www.udemy.com/api-2.0/courses';
+    url = 'https://www.udemy.com//api-2.0/courses/?price=price-paid&has_coding_exercises=True&has_simple_quiz=True&instructional_level=all&ordering=highest-rated&duration=medium';
 
 
          export default courses=() =>{

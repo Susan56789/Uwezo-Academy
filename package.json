@@ -11,13 +11,7 @@
     "dev": "run-p server start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "dev:ssr": "ng run Uwezo-Academy:serve-ssr",
-    "serve:ssr": "node dist/Uwezo-Academy/server/main.js",
-    "build:ssr": "ng build && ng run Uwezo-Academy:server",
-    "prerender": "ng run Uwezo-Academy:prerender",
-    "build:functions": "npm run functions build",
-    "build:all": "npm run build:ssr && build:functions"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -35,7 +29,6 @@
     "@angular/platform-server": "~13.0.0",
     "@angular/router": "~13.0.0",
     "@capacitor-community/http": "^1.4.1",
-    "@nguniversal/express-engine": "^13.0.1",
     "@okta/jwt-verifier": "2.1.0",
     "@types/cors": "^2.8.10",
     "@types/express": "4.17.11",
