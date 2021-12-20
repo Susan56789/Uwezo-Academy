@@ -22,16 +22,18 @@ app.use(express.urlencoded());
 //app.use(express.static(path.join(__dirname,"../dist/Uwezo-Academy/browser"));
 
 
+
+
 const cors =require("cors");
 //import cors from 'cors';
 
 var corsOptions={
-    origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "**"]
+    origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "**"],
+    credentials:"include"
 
 }
 
 app.use(cors(corsOptions));
-
 
 //REST API Call
 app.get("/",async (req, res)=>{

@@ -32,7 +32,7 @@ const headers = new HttpHeaders()
 
 
 
-    const result = await this.http.get(courseUrl,{'headers':headers}).pipe(
+    const result = await this.http.get<any>(courseUrl,{'headers':headers}).pipe(
       map((res) => {
         return res;
         //console.log(res)
