@@ -17,6 +17,6 @@ courses: any;
   async ngOnInit() {
 
  this.courses = await this.dataService.getCourses();
-  
+
   }
  }

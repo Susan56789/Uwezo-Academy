@@ -1,20 +1,19 @@
-//const express = require('express');
-import express from 'express';
+const express = require('express');
+//import express from 'express';
 
-//const bodyParser = require('body-parser');
-import bodyParser from 'body-parser';
+const bodyParser = require('body-parser');
+//import bodyParser from 'body-parser';
 
-//const pino = require('express-pino-logger')();
-import pino from 'express-pino-logger';
+const pino = require('express-pino-logger')();
+//import pino from 'express-pino-logger';
 
 //const courses =require('./courses');
 //import courses from './courses'
 //import *  as courses from './courses';
 
 
-//const cors =require("cors");
-import cors from 'cors';
-import http from 'http';
+const cors =require("cors");
+//import cors from 'cors';
 
 var PORT = 8000;
 
@@ -29,35 +28,30 @@ app.use(express.urlencoded());
 
 var corsOptions={
     origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "**"],
-    redirect:"follow"
+    redirect:"follow",
+    Authorization:"Basic WnNPY0txUnlhVU9WaWx4VFdCSE0yZGo2Uk5BUGdRM05BNzRMbUJlYTpYZlVZUXprazc3T2FmWFJ5bHVONW5RQ1hRNThGeHBtd1NYTE9HaXJQa0hDQ0lBT0N5aVRGYVZYV3htZ1V3YTBtQURab3drc2I4YzEzYVFrblNLWGlKS1ZWMUFqb2t3M3ZQNm13NTU5dXNIYXAxeU9oZFo2VHJQZERnUTlKanF1aA=="
 
 }
 
 app.use(cors(corsOptions));
 
 
-
-//app.listen(PORT, () =>{
- //   console.log(`Server is started and listening on port: ${PORT}`)
-//})
-
-http.createServer(app).listen(PORT, () =>{
-    console.log("Server is started and listening.")
-});
-
-
-
-
 //REST API Call
 app.get("/",async (req, res)=>{
-res.sendFile("Hello Node,js !");
+res.send("Hello Node,js !");
 });
 
 //Get all articles
-//require("./courses")(app);
+const courses= require("./courses");
 
 app.get("/courses", async(req,res)=>{
     console.log(courses);
-      let result = await courses (req.headers);
-     res.sendFile(result);
+      let result =  await courses (req.headers);
+     res.send(result);
     });
+
+
+    app.listen(PORT, () =>{
+   console.log(`Server is started and listening on port: ${PORT}`)
+})
+

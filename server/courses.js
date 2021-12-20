@@ -1,24 +1,23 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
     url = 'https://www.udemy.com//api-2.0/courses/?price=price-paid&has_coding_exercises=True&has_simple_quiz=True&instructional_level=all&ordering=highest-rated&duration=medium';
 
 
-         export default courses=() =>{
+         module.exports=  async  function courses() {
         try{
          const request= await fetch(url,{
                 method:'GET',
-                mode:'cors',
-                cache:'no-cache',
-                cresidentials:'omit',
                 headers:{
-                    redirect:"follow",
-                    referrerPolicy:"no-referrer",
-                    "Permissions-Policy":"interest-cohort =()",
-                    "Accept":"application/json, text/plain, */*",
-                    'Content-Type': 'application/json,  charset=utf-8',
-                    "Authorization":"Basic WnNPY0txUnlhVU9WaWx4VFdCSE0yZGo2Uk5BUGdRM05BNzRMbUJlYTpYZlVZUXprazc3T2FmWFJ5bHVONW5RQ1hRNThGeHBtd1NYTE9HaXJQa0hDQ0lBT0N5aVRGYVZYV3htZ1V3YTBtQURab3drc2I4YzEzYVFrblNLWGlKS1ZWMUFqb2t3M3ZQNm13NTU5dXNIYXAxeU9oZFo2VHJQZERnUTlKanF1aA=="
+                "Authorization":"Basic WnNPY0txUnlhVU9WaWx4VFdCSE0yZGo2Uk5BUGdRM05BNzRMbUJlYTpYZlVZUXprazc3T2FmWFJ5bHVONW5RQ1hRNThGeHBtd1NYTE9HaXJQa0hDQ0lBT0N5aVRGYVZYV3htZ1V3YTBtQURab3drc2I4YzEzYVFrblNLWGlKS1ZWMUFqb2t3M3ZQNm13NTU5dXNIYXAxeU9oZFo2VHJQZERnUTlKanF1aA==",
+                "redirect":"follow",
+                "referrerPolicy":"no-referrer",
+                "Permissions-Policy":"interest-cohort =()",
+                "Accept":"application/json, text/plain, */*",
+                'Content-Type': 'application/json,  charset=utf-8'
                 }
-            })
+                
+                
+             })
               .then(function(response){
                   //console.log(response)
                   return response.json();
@@ -31,7 +30,7 @@ import fetch from 'node-fetch';
         }
         catch(e){
             console.log("We have an error")
-           // console.log(e)
+            console.log(e)
         }
     }
 
