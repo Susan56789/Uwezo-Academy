@@ -11,10 +11,6 @@ const pino = require('express-pino-logger')();
 //import courses from './courses'
 //import *  as courses from './courses';
 
-
-const cors =require("cors");
-//import cors from 'cors';
-
 var PORT = 8000;
 
 const app = express();
@@ -26,10 +22,11 @@ app.use(express.urlencoded());
 //app.use(express.static(path.join(__dirname,"../dist/Uwezo-Academy/browser"));
 
 
+const cors =require("cors");
+//import cors from 'cors';
+
 var corsOptions={
-    origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "**"],
-    redirect:"follow",
-    Authorization:"Basic WnNPY0txUnlhVU9WaWx4VFdCSE0yZGo2Uk5BUGdRM05BNzRMbUJlYTpYZlVZUXprazc3T2FmWFJ5bHVONW5RQ1hRNThGeHBtd1NYTE9HaXJQa0hDQ0lBT0N5aVRGYVZYV3htZ1V3YTBtQURab3drc2I4YzEzYVFrblNLWGlKS1ZWMUFqb2t3M3ZQNm13NTU5dXNIYXAxeU9oZFo2VHJQZERnUTlKanF1aA=="
+    origin:["http://localhost:4200", "http://localhost:4000","http://localhost:8000", "**"]
 
 }
 
