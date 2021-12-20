@@ -14,9 +14,9 @@ courses: any;
 
   constructor(private dataService: DataService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
 
- this.courses = await this.dataService.getCourses();
+ this.courses = this.dataService.getCourses();
 
   }
  }
