@@ -28,7 +28,7 @@ import { DataService } from './services/data.service';
     HttpClientModule
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:DataService, multi: true},
+
   ],
   bootstrap: [AppComponent]
 })

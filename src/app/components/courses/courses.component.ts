@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, catchError } from 'rxjs';
+import { map, catchError, tap } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-courses',
@@ -16,7 +16,20 @@ courses: any;
 
   ngOnInit() {
 
- this.courses = this.dataService.getCourses();
+ this.courses = this.dataService.getCourses().then(res =>{res.pipe(
+   map((data) =>{
+     console.log(data);
+     return data;
+   }),
+   tap((response) => {
+    console.log(response);
+    return response;
+   
+  }),
+  catchError(async (err) => {
+    console.log(err);
+  }),
+ )})
 
   }
  }

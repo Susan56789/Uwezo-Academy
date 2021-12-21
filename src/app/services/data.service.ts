@@ -23,7 +23,6 @@ export class DataService implements HttpInterceptor {
 
 const courseUrl="https://www.udemy.com//api-2.0/courses";
 
-
 const headers = new HttpHeaders()
               .set("Authorization","Basic WnNPY0txUnlhVU9WaWx4VFdCSE0yZGo2Uk5BUGdRM05BNzRMbUJlYTpYZlVZUXprazc3T2FmWFJ5bHVONW5RQ1hRNThGeHBtd1NYTE9HaXJQa0hDQ0lBT0N5aVRGYVZYV3htZ1V3YTBtQURab3drc2I4YzEzYVFrblNLWGlKS1ZWMUFqb2t3M3ZQNm13NTU5dXNIYXAxeU9oZFo2VHJQZERnUTlKanF1aA==")
               .set("Content-Type","application/json, charset=utf-8")
@@ -31,14 +30,15 @@ const headers = new HttpHeaders()
 
 
 
-    const result = await this.http.get<any>(courseUrl,{'headers':headers}).pipe(
+    const result = await this.http.get(courseUrl,{'headers':headers}).pipe(
       map((res) => {
+        console.log(res);
         return res;
-        //console.log(res)
       }),
       tap((response) => {
+        console.log(response);
         return response;
-      // console.log(response)
+       
       }),
       catchError(async (err) => {
         console.log(err);
