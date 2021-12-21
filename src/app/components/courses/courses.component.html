@@ -4,7 +4,9 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <ul *ngFor='let course of courses | async'>
-            <li></li>
+            <li>{{course.title}}</li>
+            <li>{{course.price}}</li>
+            <li>{{course.url}}</li>
         </ul>
         </div>
         

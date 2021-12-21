@@ -19,10 +19,9 @@ export class DataService implements HttpInterceptor {
     //throw new Error('Method not implemented.');
   }
 
-
    async getCourses() {
 
-const courseUrl="http//localhost:8000/courses";
+const courseUrl="https://www.udemy.com//api-2.0/courses";
 
 
 const headers = new HttpHeaders()
