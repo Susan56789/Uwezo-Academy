@@ -1,10 +1,17 @@
 <div class="content">
-    <h1>Our Course</h1>
      <table>
+       <thead>Our Courses</thead>
+       <tr>
+         <td>Link</td>
+         <td>Title</td>
+         <td>Price</td>
+         <td>Description</td>
+       </tr>
          <tr  *ngFor="let c of courses">
+          <td>{{c.url}}</td>
              <td>{{c.title}}</td>
              <td>{{c.price}}</td>
-             <td>{{c.url}}</td>
+             <td>{{c.headline}}</td>
          </tr>
      </table>
     
