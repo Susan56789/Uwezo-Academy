@@ -1,35 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { map, catchError, tap } from 'rxjs';
-import { DataService } from 'src/app/services/data.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { map, Subject, takeUntil, tap } from 'rxjs';
+import { CoursesService } from 'src/app/services/courses.service';
+
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
-
-
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent implements OnInit,OnDestroy {
 
-courses: any;
+  closeActive= new Subject<void>();
 
-  constructor(private dataService: DataService) { }
+  constructor(private courseService:CoursesService) { }
 
-  ngOnInit() {
+  courses:any;
+  
 
- this.courses = this.dataService.getCourses().then(res =>{res.pipe(
-   map((data) =>{
-     console.log(data);
-     return data;
-   }),
-   tap((response) => {
-    console.log(response);
-    return response;
-   
-  }),
-  catchError(async (err) => {
-    console.log(err);
-  }),
- )})
+  async ngOnInit(): Promise<void> {
+  this.courses = [
+  
+    (await this.courseService.getCourses()).pipe(
+      map((data)=>{
+        console.log(data)
+        return data
+      })  
+    ).subscribe((res: string[])=>{
+      console.log(res);
+      return res;
+    }) ,
+    takeUntil(this.closeActive)
+  ];
+  
+  
+console.log(this.courses);
 
   }
- }
+
+  ngOnDestroy(){
+    this.closeActive.next();
+    this.closeActive.complete();
+  }
+
+}

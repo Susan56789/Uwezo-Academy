@@ -1,16 +1,13 @@
-<div class="container">
-
-    <h3>OUR COURSES</h3>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <ul *ngFor='let course of courses | async'>
-            <li>{{course.title}}</li>
-            <li>{{course.price}}</li>
-            <li>{{course.url}}</li>
-        </ul>
-        </div>
-        
-        </div>
+<div class="content">
+    <h1>Our Course</h1>
+     <table>
+         <tr  *ngFor="let c of courses">
+             <td>{{c.title}}</td>
+             <td>{{c.proce}}</td>
+             <td>{{c.url}}</td>
+         </tr>
+     </table>
+    
 </div>
 
 <app-footer></app-footer>
