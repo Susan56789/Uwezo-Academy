@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map, publish, Subject, takeUntil, tap } from 'rxjs';
+import { GlobalData } from 'src/app/model/global-data';
 import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
@@ -13,26 +14,20 @@ export class CoursesComponent implements OnInit,OnDestroy {
 
   constructor(private courseService:CoursesService) { }
 
-  courses:any;
-  
+  courses:GlobalData[]=[]
 
-  async ngOnInit(): Promise<void> {
-  this.courses = [
+  async ngOnInit():Promise<void> {
   
-   await (await this.courseService.getCourses()).pipe(
-    map((res) => {
-      console.log(res);
-      return res;
-    }),
-    tap((response) => {
-      console.log(response);
-      return response;
-     
+  
+    (await this.courseService.getCourses()).subscribe({
+      next: (result:any) =>{
+        
+        this.courses = result;
+
+        console.log(result);
+        return result;
+      }
     })
-   )
-  ]
-  
-console.log(this.courses);
 
   }
 
