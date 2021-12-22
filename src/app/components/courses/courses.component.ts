@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { map, Subject, takeUntil, tap } from 'rxjs';
+import { map, publish, Subject, takeUntil, tap } from 'rxjs';
 import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class CoursesComponent implements OnInit,OnDestroy {
   
    await (await this.courseService.getCourses()).pipe(
     map((res) => {
-     // console.log(res);
+      console.log(res);
       return res;
     }),
     tap((response) => {
@@ -29,7 +29,7 @@ export class CoursesComponent implements OnInit,OnDestroy {
       return response;
      
     })
-   ).subscribe()
+   )
   ]
   
 console.log(this.courses);
