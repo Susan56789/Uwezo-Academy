@@ -21,7 +21,7 @@ export class CoursesComponent implements OnInit,OnDestroy {
   
    await (await this.courseService.getCourses()).pipe(
     map((res) => {
-      console.log(res);
+     // console.log(res);
       return res;
     }),
     tap((response) => {
