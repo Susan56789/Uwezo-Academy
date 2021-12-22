@@ -1,0 +1,16 @@
+.table{
+    table-layout: fixed;
+    width: 100%;
+    color: black;
+    font-weight:inherit;
+}
+
+td{
+    width: 25%;
+}
+
+th{
+    text-align: center;
+    font-size: 40px;
+}
+

@@ -4,6 +4,7 @@ import { catchError, tap } from 'rxjs';
 import { GlobalData } from '../model/global-data';
 import {map} from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
