@@ -14,7 +14,7 @@ export class CoursesService {
 
 
   async getCourses(){
-    return  await this.http.get<any>('https://aqueous-fjord-24538.herokuapp.com/courses').pipe(
+    return  await this.http.get<any>('https://fierce-bayou-79908.herokuapp.com/https://aqueous-fjord-24538.herokuapp.com/courses').pipe(
       map((res) => {
        // console.log(res);
         let rows = res.results;
