@@ -19,18 +19,18 @@ export class CoursesComponent implements OnInit,OnDestroy {
   async ngOnInit(): Promise<void> {
   this.courses = [
   
-    (await this.courseService.getCourses()).pipe(
-      map((data)=>{
-        console.log(data)
-        return data
-      })  
-    ).subscribe((res: string[])=>{
+   await (await this.courseService.getCourses()).pipe(
+    map((res) => {
       console.log(res);
       return res;
-    }) ,
-    takeUntil(this.closeActive)
-  ];
-  
+    }),
+    tap((response) => {
+      console.log(response);
+      return response;
+     
+    })
+   ).subscribe()
+  ]
   
 console.log(this.courses);
 

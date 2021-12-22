@@ -11,7 +11,18 @@ export class CoursesService {
 
 
   async getCourses(){
-    const result = await this.http.get<string[]>('https://aqueous-fjord-24538.herokuapp.com/courses');
+    const result = await this.http.get<string[]>('https://aqueous-fjord-24538.herokuapp.com/courses').pipe(
+      map((res) => {
+        console.log(res);
+        return res;
+      }),
+      tap((response) => {
+        console.log(response);
+        return response;
+       
+      })
+
+    );
     
     return result;
   }
