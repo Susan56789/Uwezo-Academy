@@ -1,11 +1,12 @@
 <div class='container'>
+    <h1>Reviews from our students</h1>
     <div class="card" style="width: 30rem;">
         <div class="card-body" *ngFor="let r of reviews">
-          <h5 class="card-title">{{r.user.title}}</h5>
+          <h5 class="card-title">User: {{r.user.title}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{r._class}}</h6>
-          <h6 class="card-subtitle mb-2 text-muted">{{r.rating}}</h6>
-          <p class="card-text">{{r.created | date}}</p>
-          <p class="card-text">{{r.content}}</p>
+          <h6 class="card-subtitle mb-2 text-muted">Rating: {{r.rating}}</h6>
+          <p class="card-text">Date: {{r.created | date}}</p>
+          <p class="card-text">Content: {{r.content}}</p>
 
         </div>
       </div>
