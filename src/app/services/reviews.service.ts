@@ -8,17 +8,19 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesService {
+export class ReviewsService {
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-  async getCourses(){
-    return  await this.http.get<any>('https://fierce-bayou-79908.herokuapp.com/https://aqueous-fjord-24538.herokuapp.com/courses').pipe(
+  async getReviews(){
+    return  await this.http.get<any>('https://fierce-bayou-79908.herokuapp.com/https://aqueous-fjord-24538.herokuapp.com/courses/reviews').pipe(
       map((res) => {
-       console.log(res);
+       // console.log(res);
         let rows = res.results;
 
+        //let courses:GlobalData[]=[];
+         
        // console.log(rows);
 
         return Object.values(rows)

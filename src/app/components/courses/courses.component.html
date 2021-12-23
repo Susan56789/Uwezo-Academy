@@ -9,12 +9,14 @@
           <td>Title</td>
           <td>Price</td>
           <td>Description</td>
+          <td>Reviews</td>
         </tr>
           <tr class='row'  *ngFor="let c of courses">
            <td>{{c.url}}</td>
               <td>{{c.title}}</td>
               <td>{{c.price}}</td>
               <td>{{c.headline}}</td>
+              <td><a routerLink='reviews'>Reviews</a></td>
           </tr>
        </tbody>
      </table>

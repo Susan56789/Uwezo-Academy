@@ -14,7 +14,7 @@ export class CoursesComponent implements OnInit,OnDestroy {
 
   constructor(private courseService:CoursesService) { }
 
-  courses:GlobalData[]=[]
+  courses:any;
 
   async ngOnInit():Promise<void> {
   
@@ -24,7 +24,7 @@ export class CoursesComponent implements OnInit,OnDestroy {
         
         this.courses = result;
 
-        console.log(result);
+       // console.log(result);
         return result;
       }
     })
